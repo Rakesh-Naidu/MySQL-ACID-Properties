@@ -44,7 +44,7 @@ mysql> SELECT *
 |          8 |         4 | 35.99 |      350 |
 |          9 |         5 | 18.99 |      180 |
 |         10 |         5 | 28.99 |      280 |
-|          1 |         6 | 10.99 |      100 |<---- Failed to update, due to rollback
+|          1 |         6 |  9.99 |      100 |<---- Failed to update, due to rollback
 |          2 |         7 | 20.99 |      200 |
 |          3 |         8 | 15.99 |      150 |
 |          4 |         9 | 25.99 |      250 |
