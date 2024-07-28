@@ -1,0 +1,8 @@
+mysql> DROP TABLE Products;
+ERROR 3730 (HY000): Cannot drop table 'products' referenced by a foreign key constraint 'productdetails_ibfk_1' on table 'ProductDetails'.
+
+mysql> DROP TABLE Sellers;
+ERROR 3730 (HY000): Cannot drop table 'sellers' referenced by a foreign key constraint 'productdetails_ibfk_2' on table 'ProductDetails'.
+
+mysql> DROP TABLE Customers;
+ERROR 3730 (HY000): Cannot drop table 'customers' referenced by a foreign key constraint 'orders_ibfk_1' on table 'Orders'.

@@ -1,0 +1,16 @@
+mysql> select * from customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+|           1 | Alica   | alica@example.com   | Active |<---- Updated
+|           2 | Bob     | bob@example.com     | Active |
+|           3 | Charlie | charlie@example.com | Active |
+|           4 | David   | david@example.com   | Active |
+|           5 | Eve     | eve@example.com     | Active |
+|           6 | Frank   | frank@example.com   | Active |
+|           7 | Grace   | grace@example.com   | Active |
+|           8 | Heidi   | heidi@example.com   | Active |
+|           9 | Ivan    | ivan@example.com    | Active |
+|          10 | Judy    | judy@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)

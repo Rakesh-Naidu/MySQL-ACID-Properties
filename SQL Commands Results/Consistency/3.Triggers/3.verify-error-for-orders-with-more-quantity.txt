@@ -1,0 +1,11 @@
+mysql> INSERT INTO Orders (order_id, customer_id, product_id, seller_id, order_date, quantity) VALUES
+    ->     ('Order_21', 'Customer_6', 'Product_1', 'Seller_7', '2024-07-28', 1);
+ERROR 1644 (45000): The seller Seller G does not sell the product Product 1.
+
+mysql> INSERT INTO Orders (order_id, customer_id, product_id, seller_id, order_date, quantity) VALUES
+    -> ('Order_21', 'Customer_6', 'Product_1', 'Seller_6', '2024-07-28', 0);
+ERROR 3819 (HY000): Check constraint 'orders_chk_1' is violated.
+
+mysql> INSERT INTO Orders (order_id, customer_id, product_id, seller_id, order_date, quantity) VALUES
+    -> ('Order_21', 'Customer_6', 'Product_1', 'Seller_6', '2024-07-28', 99);
+ERROR 1644 (45000): Only 98 units of Product 1 sold by Seller F are available to order.

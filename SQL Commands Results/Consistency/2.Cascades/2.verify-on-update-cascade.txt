@@ -1,0 +1,82 @@
+mysql> select * from customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve@example.com     | Active |
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select * from sellers;
++-----------+----------+--------+
+| seller_id | name     | status |
++-----------+----------+--------+
+| Seller_1  | Seller A | Active |
+| Seller_10 | Seller J | Active |
+| Seller_11 | Seller K | Active |
+| Seller_12 | Seller L | Active |
+| Seller_13 | Seller M | Active |
+| Seller_14 | Seller N | Active |
+| Seller_15 | Seller O | Active |
+| Seller_2  | Seller B | Active |
+| Seller_3  | Seller C | Active |
+| Seller_4  | Seller D | Active |
+| Seller_5  | Seller E | Active |
+| Seller_6  | Seller F | Active |
+| Seller_7  | Seller G | Active |
+| Seller_8  | Seller H | Active |
+| Seller_9  | Seller I | Active |
++-----------+----------+--------+
+15 rows in set (0.00 sec)
+
+mysql> select * from products;
++------------+------------+
+| product_id | name       |
++------------+------------+
+| Product_1  | Product 1  |
+| Product_10 | Product 10 |
+| Product_2  | Product 2  |
+| Product_3  | Product 3  |
+| Product_4  | Product 4  |
+| Product_5  | Product 5  |
+| Product_6  | Product 6  |
+| Product_7  | Product 7  |
+| Product_8  | Product 8  |
+| Product_9  | Product 9  |
++------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM ProductDetails;
++------------+-----------+-------+----------+
+| product_id | seller_id | price | quantity |
++------------+-----------+-------+----------+
+| Product_1  | Seller_1  | 10.99 |      100 |<---- Product Id, Seller Id cascaded from Products, Sellers tables
+| Product_2  | Seller_1  | 20.99 |      200 |
+| Product_5  | Seller_10 | 12.99 |      120 |
+| Product_6  | Seller_11 | 22.99 |      220 |
+| Product_7  | Seller_12 | 30.99 |      300 |
+| Product_8  | Seller_13 | 35.99 |      350 |
+| Product_9  | Seller_14 | 18.99 |      180 |
+| Product_10 | Seller_15 | 28.99 |      280 |
+| Product_3  | Seller_2  | 15.99 |      150 |
+| Product_4  | Seller_2  | 25.99 |      250 |
+| Product_5  | Seller_3  | 12.99 |      120 |
+| Product_6  | Seller_3  | 22.99 |      220 |
+| Product_7  | Seller_4  | 30.99 |      300 |
+| Product_8  | Seller_4  | 35.99 |      350 |
+| Product_10 | Seller_5  | 28.99 |      280 |
+| Product_9  | Seller_5  | 18.99 |      180 |
+| Product_1  | Seller_6  |  9.99 |      100 |
+| Product_2  | Seller_7  | 20.99 |      200 |
+| Product_3  | Seller_8  | 15.99 |      150 |
+| Product_4  | Seller_9  | 25.99 |      250 |
++------------+-----------+-------+----------+
+20 rows in set (0.00 sec)

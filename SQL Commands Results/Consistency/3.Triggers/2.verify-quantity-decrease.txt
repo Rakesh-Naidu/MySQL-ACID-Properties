@@ -1,0 +1,53 @@
+mysql> select * from orders;
++----------+-------------+------------+-----------+------------+----------+
+| order_id | customer_id | product_id | seller_id | order_date | quantity |
++----------+-------------+------------+-----------+------------+----------+
+| Order_1  | Customer_1  | Product_1  | Seller_1  | 2024-07-01 |        2 |
+| Order_10 | Customer_4  | Product_10 | Seller_5  | 2024-07-10 |        3 |
+| Order_11 | Customer_5  | Product_1  | Seller_6  | 2024-07-11 |        2 |
+| Order_12 | Customer_5  | Product_2  | Seller_7  | 2024-07-12 |        1 |
+| Order_13 | Customer_6  | Product_3  | Seller_8  | 2024-07-13 |        4 |
+| Order_14 | Customer_7  | Product_4  | Seller_9  | 2024-07-14 |        2 |
+| Order_15 | Customer_8  | Product_5  | Seller_10 | 2024-07-15 |        5 |
+| Order_16 | Customer_9  | Product_6  | Seller_11 | 2024-07-16 |        3 |
+| Order_17 | Customer_10 | Product_7  | Seller_12 | 2024-07-17 |        1 |
+| Order_18 | Customer_10 | Product_8  | Seller_13 | 2024-07-18 |        2 |
+| Order_19 | Customer_10 | Product_9  | Seller_14 | 2024-07-19 |        4 |
+| Order_2  | Customer_1  | Product_2  | Seller_1  | 2024-07-02 |        3 |
+| Order_20 | Customer_10 | Product_10 | Seller_15 | 2024-07-20 |        5 |
+| Order_3  | Customer_1  | Product_3  | Seller_2  | 2024-07-03 |        1 |
+| Order_4  | Customer_2  | Product_4  | Seller_2  | 2024-07-04 |        5 |
+| Order_5  | Customer_2  | Product_5  | Seller_3  | 2024-07-05 |        2 |
+| Order_6  | Customer_2  | Product_6  | Seller_3  | 2024-07-06 |        4 |
+| Order_7  | Customer_3  | Product_7  | Seller_4  | 2024-07-07 |        3 |
+| Order_8  | Customer_3  | Product_8  | Seller_4  | 2024-07-08 |        1 |
+| Order_9  | Customer_4  | Product_9  | Seller_5  | 2024-07-09 |        2 |
++----------+-------------+------------+-----------+------------+----------+
+20 rows in set (0.00 sec)
+
+mysql> select * from productDetails;
++------------+-----------+-------+----------+
+| product_id | seller_id | price | quantity |
++------------+-----------+-------+----------+
+| Product_1  | Seller_1  | 10.99 |       98 |<---- Updated Quantity for all the products
+| Product_2  | Seller_1  | 20.99 |      197 |
+| Product_5  | Seller_10 | 12.99 |      115 |
+| Product_6  | Seller_11 | 22.99 |      217 |
+| Product_7  | Seller_12 | 30.99 |      299 |
+| Product_8  | Seller_13 | 35.99 |      348 |
+| Product_9  | Seller_14 | 18.99 |      176 |
+| Product_10 | Seller_15 | 28.99 |      275 |
+| Product_3  | Seller_2  | 15.99 |      149 |
+| Product_4  | Seller_2  | 25.99 |      245 |
+| Product_5  | Seller_3  | 12.99 |      118 |
+| Product_6  | Seller_3  | 22.99 |      216 |
+| Product_7  | Seller_4  | 30.99 |      297 |
+| Product_8  | Seller_4  | 35.99 |      349 |
+| Product_10 | Seller_5  | 28.99 |      277 |
+| Product_9  | Seller_5  | 18.99 |      178 |
+| Product_1  | Seller_6  |  9.99 |       98 |
+| Product_2  | Seller_7  | 20.99 |      199 |
+| Product_3  | Seller_8  | 15.99 |      146 |
+| Product_4  | Seller_9  | 25.99 |      248 |
++------------+-----------+-------+----------+
+20 rows in set (0.00 sec)

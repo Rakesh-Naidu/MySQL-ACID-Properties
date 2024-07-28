@@ -1,0 +1,11 @@
+mysql> show tables;
++---------------------+
+| Tables_in_amazon_db |
++---------------------+
+| Customers           |
+| Orders              |
+| ProductDetails      |
+| Products            |
+| Sellers             |
++---------------------+
+5 rows in set (0.01 sec)
