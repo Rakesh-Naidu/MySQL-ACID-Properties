@@ -1,0 +1,93 @@
+mysql> SELECT @@transaction_ISOLATION;
++-------------------------+
+| @@transaction_ISOLATION |
++-------------------------+
+| READ-COMMITTED          |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |<--- Transaction 1
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve11@example.com   | Active |
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |<--- Transaction 2
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve11@example.com   | Active |
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve@example.com     | Active |<--- Updated in Transaction 1
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve11@example.com   | Active |<--- No change observed in Transaction 2.
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve@example.com     | Active |<--- Updated in Transaction 2 after Transaction 1 is committed.
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (0.00 sec)
+

@@ -1,0 +1,29 @@
+mysql> SELECT @@transaction_ISOLATION;
++-------------------------+
+| @@transaction_ISOLATION |
++-------------------------+
+| SERIALIZABLE            |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> UPDATE Customers SET email = 'eve@example.com' where customer_id = 'Customer_5';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * from Customers;
++-------------+---------+---------------------+--------+
+| customer_id | name    | email               | status |
++-------------+---------+---------------------+--------+
+| Customer_1  | Alica   | alica@example.com   | Active |
+| Customer_10 | Judy    | judy@example.com    | Active |
+| Customer_2  | Bob     | bob@example.com     | Active |
+| Customer_3  | Charlie | charlie@example.com | Active |
+| Customer_4  | David   | david@example.com   | Active |
+| Customer_5  | Eve     | eve@example.com     | Active |<--- Updated value after transaction 1 committed.
+| Customer_6  | Frank   | frank@example.com   | Active |
+| Customer_7  | Grace   | grace@example.com   | Active |
+| Customer_8  | Heidi   | heidi@example.com   | Active |
+| Customer_9  | Ivan    | ivan@example.com    | Active |
++-------------+---------+---------------------+--------+
+10 rows in set (5.39 sec) <-- Transaction 2 reads only after Transaction 1 is committed.
+
